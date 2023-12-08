@@ -1,0 +1,27 @@
+<div class="container">
+    <mat-form-field>
+        <mat-label>Search</mat-label>
+        <input matInput [(ngModel)]="searchText" placeholder="Filter posts..." autocomplete="off"
+            (input)="onSearchText()" />
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Create new post</mat-label>
+        <input matInput [(ngModel)]="newPostText" placeholder="New post..." autocomplete="off" (input)="createPost()" />
+        <div class="registration-page-btn btn-container">
+            <button mat-raised-button color="primary" (click)="createPost()">Post</button>
+        </div>
+    </mat-form-field>
+</div>
+
+<div class="post-list" *ngIf="posts.length > 1 && filteredPosts.length < 1">
+    <a *ngFor="let post of posts">
+        <post [postData]="post"></post>
+    </a>
+</div>
+
+<div class="post-list" *ngIf="posts.length > 1 && filteredPosts.length > 1">
+    <a *ngFor="let post of filteredPosts">
+        <post [postData]="post"></post>
+    </a>
+</div>
