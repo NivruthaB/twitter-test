@@ -1,0 +1,37 @@
+<div>
+  <mat-toolbar color="primary" class="header">{{headerText}}</mat-toolbar>
+  <div class="form" *ngIf="isNewUser !== true">
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput [(ngModel)]="email" type="text" placeholder="Email" autocomplete="off" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input matInput [(ngModel)]="password" type="password" placeholder="Password" autocomplete=" off" />
+    </mat-form-field>
+  </div>
+  <div class="form" *ngIf="isNewUser">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput [(ngModel)]="newUsername" type="text" placeholder="Email" autocomplete="off" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput [(ngModel)]="newUserEmail" type="text" placeholder="Email" autocomplete="off" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input matInput [(ngModel)]="newUserPassword" type="password" placeholder="Password" autocomplete=" off" />
+    </mat-form-field>
+  </div>
+  <div *ngIf="!isNewUser" class="btn-container">
+    <button mat-raised-button color="primary" (click)="showRegistrationPage()">New user?</button>
+    <button mat-raised-button color="primary" (click)="login()">Login</button>
+  </div>
+  <div *ngIf="isNewUser" class="registration-page-btn btn-container">
+    <button mat-raised-button color="primary" (click)="register()">Register</button>
+  </div>
+  <div *ngIf="loginSuccessful===false">
+    Login was not successful. Please try again!
+  </div>
+</div>

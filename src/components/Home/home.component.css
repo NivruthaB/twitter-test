@@ -1,0 +1,18 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.registration-page-btn {
+    justify-content: flex-end;
+}
+
+.header {
+    margin-bottom: 30px;
+}

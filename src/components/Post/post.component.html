@@ -1,0 +1,7 @@
+<div *ngIf="postData" class="post-item ">
+    <div>{{ userName }}</div>
+    <img [src]="avatarURL" />
+    <div>
+        <span mat-line>{{ postData.content.text }}</span>
+    </div>
+</div>
